@@ -1,15 +1,32 @@
-import http from "http";
+// import http from "http";
+import express from "express";
 
-const host = "127.0.0.1";
+// const host = "127.0.0.1";
 const port = 8000;
+const app = express();
 
-const server = http.createServer((req, res) => {
-  req.url;
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello");
+app.get("./hello", (req, res) => {
+  res.send("Hello");
 });
 
-server.listen(port, host, () => {
+app.listen(port, () => {
   console.log("server is done");
 });
+
+// const server = http.createServer((req, res) => {
+//   switch (req.method) {
+//     case "GET":
+//       switch (req.url) {
+//         case "/hello":
+//           res.statusCode = 200;
+//           res.setHeader("Content-Type", "text/plain");
+//           res.end("Hello");
+//           break;
+//       }
+//       break;
+//   }
+// });
+
+// server.listen(port, host, () => {
+//   console.log("server is done");
+// });
