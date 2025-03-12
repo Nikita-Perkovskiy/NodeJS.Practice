@@ -1,9 +1,9 @@
 import express from "express";
-const router = express.Router();
-router.post("/login", (req, res) => {
+const userRouter = express.Router();
+userRouter.post("/login", (req, res) => {
     res.send("Login successful");
 });
-router.post("/register", (req, res) => {
+userRouter.post("/register", (req, res) => {
     res.send("Registration successful");
 });
-export { router };
+export { userRouter };
